@@ -1,0 +1,172 @@
+# 2-matrix_divided.txt
+
+
+==============================
+HOW TO USE 2-matrix_divided.py
+==============================
+
+Usage
+=====
+
+``matrix_divided(...)`` divides all elements of a matrix.
+
+::
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> print(matrix_divided(matrix, 3))
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+When matrix elements are floating point numbers
+
+::
+
+    >>> matrix = [[1.7, 2.2, 3], [4.8, 5, 6.5]]
+    >>> print(matrix_divided(matrix, 5))
+    [[0.34, 0.44, 0.6], [0.96, 1.0, 1.3]]
+
+When elements are strings
+
+::
+    >>> matrix = [[1.7, 2.2, 3], [4.8, 5, 6.5], ["6", 5, "9"]]
+    >>> print(matrix_divided(matrix, 2))
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+      File "<stdin>", line 10, in matrix_divided
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+When matrix row is tuple or not a list
+
+::
+
+    >>> matrix = [[1.7, 2.2, 3], [4.8, 5, 6.5], {0, 5, 7}]
+    >>> print(matrix_divided(matrix, 5))
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+      File "<stdin>", line 5, in matrix_divided
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+When size of row differs
+
+::
+
+    >>> matrix = [[1.7, 2.2, 3], [4.8, 5, 6.5], [9, 2, 5, 6]]
+    >>> print(matrix_divided(matrix, 5))
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+      File "<stdin>", line 13, in matrix_divided
+    TypeError: Each row of the matrix must have the same size
+
+::
+
+    >>> matrix = [[1.7, 2.2, 3], [4.8, 5, 6.5], None]
+    >>> print(matrix_divided(matrix, 8))
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+      File "<stdin>", line 5, in matrix_divided
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+When matrix elements are divided by zero
+
+::
+
+    >>> matrix = [[1.7, 2.2, 3], [4.8, 5, 6.5], [3, 5, 7]]
+    >>> print(matrix_divided(matrix, 0))
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+      File "<stdin>", line 17, in matrix_divided
+    ZeroDivisionError: division by zero
+
+::
+
+    >>> matrix = [[1.7, 2.2, 3], [4.8, 5, 6.5], [3, 5, 7], sneaker]
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    NameError: name 'sneaker' is not defined
+
+::
+    >>> matrix = [[1.7, 2.2, 3], [4.8, 5, 6.5], [3, 5, 7], "sneaker"]
+    >>> print(matrix_divided(matrix, 4))
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+      File "<stdin>", line 5, in matrix_divided
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+::
+
+    >>> matrix = [[1.7, 2.2]]
+    >>> print(matrix_divided(matrix, 4))
+    [[0.42, 0.55]]
+
+When theres is an empty list
+
+::
+
+    >>> matrix = [[1.7, 2.2], [], [2, 4]]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+      File "<stdin>", line 13, in matrix_divided
+    TypeError: Each row of the matrix must have the same size
+
+    >>> matrix = [[]]
+    >>> print(matrix_divided(matrix, 3))
+    [[]]
+
+::
+
+    >>> matrix = {[1.7, 2.2, 3], [4.8, 5, 6.5], [9, 2, 5, 6]}
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    TypeError: unhashable type: 'list'
+
+    >>> matrix = {1.7, 2.2, 3, 4.8, 5, 6.5, 9, 2, 5, 6}
+    >>> print(matrix_divided(matrix, 4))
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+      File "<stdin>", line 11, in matrix_divided
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Empty list
+
+::
+
+    >>> matrix = []
+    >>> print(matrix_divided(matrix, 3))
+    []
+
+Tuple within List
+
+::
+
+    >>> matrix = [{1.7, 2.2, 3, 4.8, 5, 6.5, 9, 2, 5, 6}]
+    >>> print(matrix_divided(matrix, 2))
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+      File "<stdin>", line 11, in matrix_divided
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Tuple within set
+
+::
+    >>> matrix = ({1.7, 2.2, 3, 4.8, 5, 6.5, 9, 2, 5, 6})
+    >>> print(matrix_divided(matrix, 5))
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+      File "<stdin>", line 11, in matrix_divided
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+::
+
+    >>> matrix = ([])
+    >>> print(matrix_divided(matrix, 5))
+    []
+    >>> matrix = ([1.2, 4, 6], [3, 5, 6])
+    >>> print(matrix_divided(matrix, 2))
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+      File "<stdin>", line 11, in matrix_divided
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+    >>> matrix = ([[1.2, 4, 6], [3, 5, 6]])
+    >>> print(matrix_divided(matrix, 2))
+    [[0.6, 2.0, 3.0], [1.5, 2.5, 3.0]]

@@ -1,0 +1,68 @@
+# 0-add_integer.txt
+
+
+============================
+HOW TO USE 0-add_interger.py
+============================
+
+Usage
+=====
+
+``add_integer(...)`` returns the sum of two integer arguments
+
+::
+
+    >>> add_integer =  __import__('0-add_integer').add_integer
+    >>> add_integer(5, 6)
+    11
+    >>> add_integer(-4, 5)
+    1
+
+Note b has initial value of 98:
+
+::
+
+    >>> add_integer(8)
+    106
+
+It also works with floating point numbers
+
+::
+
+    >>> add_integer(2.5, 3.7)
+    5
+    >>> add_integer(2, 3.7)
+    5
+    >>> add_integer(6.6, 3)
+    9
+
+Strings
+=======
+
+::
+
+    >>> add_integer("6", 3)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+    >>> add_integer(6, "3")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+    >>> add_integer("6", "3")
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+
+::
+
+    >>> add_integer(6, None)
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+
+Floating Point Number
+=====================
+
+::
+    >>> add_integer(160, 3.23455)
+    163

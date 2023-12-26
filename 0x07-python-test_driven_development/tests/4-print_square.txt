@@ -1,0 +1,89 @@
+# 4-print_square.txt
+
+============================
+HOW TO USE 4-print_square.py
+============================
+
+Usage
+=====
+``print_square(size)`` function prints a Square with the character #.
+
+::
+
+>>> print_square = __import__('4-print_square').print_square
+>>> print_square(5)
+#####
+#####
+#####
+#####
+#####
+
+::
+>>> print_square(five)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'five' is not defined
+
+::
+
+>>> print_square("five")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 4, in print_square
+TypeError: size must be an integer
+
+>>> print_square("6")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 4, in print_square
+TypeError: size must be an integer
+
+
+::
+
+>>> print_square(6.5)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 4, in print_square
+TypeError: size must be an integer
+
+
+>>> print_square(0)
+
+::
+
+>>> print_square(-1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 6, in print_square
+ValueError: size must be >= 0
+
+>>> print_square(-34)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 6, in print_square
+ValueError: size must be >= 0
+
+>>> print_square(-3.5)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 4, in print_square
+TypeError: size must be an integer
+
+::
+
+>>> print_square(3+1)
+####
+####
+####
+####
+
+>>> print_square(4*2)
+########
+########
+########
+########
+########
+########
+########
+########
