@@ -1,0 +1,80 @@
+# 5-text_indentation.txt
+
+================================
+HOW TO USE 5-text_indentation.py
+================================
+
+Usage
+=====
+``text_indentation(text)`` function prints a text with 2 new lines after each
+of these characters: '.', '?', ':'
+
+::
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("I am a Baby boy. Fly me to the Moon let's play among the stars, do you like the stars? Let us see what spring is like on: Jupiter and Mars")
+I am a Baby boy.
+
+Fly me to the Moon let's play among the stars, do you like the stars?
+
+Let us see what spring is like on:
+
+Jupiter and Mars
+
+::
+
+>>> text_indentation(I am a Baby boy. Fly me to the Moon let's play among the stars, do you like the stars? Let us see w
+hat spring is like on: Jupiter and Mars)
+  File "<stdin>", line 1
+    text_indentation(I am a Baby boy. Fly me to the Moon let's play among the stars, do you like the stars? Let us see what spring is like on: Jupiter and Mars)
+                       ^
+SyntaxError: invalid syntax
+
+
+::
+
+>>> text_indentation([I am a Baby Boy for Life])
+  File "<stdin>", line 1
+    text_indentation([I am a Baby Boy for Life])
+                        ^
+SyntaxError: invalid syntax
+
+>>> text_indentation([])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 9, in text_indentation
+TypeError: text must be a string
+
+>>> text_indentation([""])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 9, in text_indentation
+TypeError: text must be a string
+
+>>> text_indentation(["I am a Baby Boy for Life"])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 9, in text_indentation
+TypeError: text must be a string
+
+::
+
+>>> text_indentation()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+::
+
+>>> text_indentation("")
+
+>>> text_indentation("Zoom Zoom zoom zoom")
+Zoom Zoom zoom zoom
+
+::
+
+>>> text_indentation(12243535)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 9, in text_indentation
+TypeError: text must be a string
